@@ -57,7 +57,7 @@ section[id]{scroll-margin-top:88px}
 
 /* ---------- botones ---------- */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;white-space:nowrap;
   height:54px;padding:0 26px;border-radius:99px;border:0;cursor:pointer;
   font-family:var(--ui);font-size:1.02rem;font-weight:600;letter-spacing:-.01em;text-decoration:none;
   transition:transform .16s var(--ease),box-shadow .24s var(--ease),background .2s,color .2s;
@@ -244,7 +244,6 @@ section[id]{scroll-margin-top:88px}
 
 /* ---------- pantallas medianas ---------- */
 @media (max-width:1000px){
-  .menu{display:none}
   .portada-grilla{grid-template-columns:1fr;gap:44px;text-align:center}
   .portada-texto{display:flex;flex-direction:column;align-items:center}
   .portada .bajada{margin-left:auto;margin-right:auto}
@@ -279,4 +278,144 @@ section[id]{scroll-margin-top:88px}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   [data-ap]{opacity:1;transform:none}
+}
+
+/* =====================================================================
+   Sitio corporativo: navegación con desplegable, portadas de sección,
+   bloques de color y piezas que se repiten en todas las páginas.
+   ===================================================================== */
+
+/* ---------- navegación ---------- */
+.cabecera-fila{gap:14px}
+@media (max-width:1180px){ .menu > a,.menu-btn{padding:9px 9px;font-size:.9rem} .marca span{display:none} }
+.menu{align-items:center;gap:4px;font-size:.95rem}
+.menu > a,.menu-btn{
+  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:9px 12px;border-radius:99px;border:0;background:transparent;cursor:pointer;
+  font-family:var(--ui);font-size:.95rem;font-weight:500;color:var(--tinta-2);text-decoration:none;transition:background .2s,color .2s;
+}
+.menu > a:hover,.menu-btn:hover{background:var(--crema-2);color:var(--tinta)}
+.menu > a.actual{color:var(--verde);font-weight:600}
+.menu > a.pastilla{background:var(--tinta);color:#fff;font-weight:600}
+.menu > a.pastilla:hover{background:var(--verde)}
+.menu > a.pastilla.actual{background:var(--verde);color:#fff}
+.menu a::after{content:none}
+.menu-desp{position:relative}
+.menu-btn svg{transition:transform .25s var(--ease)}
+.menu-desp.abierto .menu-btn{background:var(--crema-2);color:var(--tinta)}
+.menu-desp.abierto .menu-btn svg{transform:rotate(180deg)}
+.desp{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translate(-50%,-8px);width:min(560px,86vw);
+  background:#fff;border:1px solid var(--linea);border-radius:22px;box-shadow:var(--sombra-2);padding:12px;
+  display:grid;grid-template-columns:1fr 1fr;gap:4px;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s;z-index:60;
+}
+.menu-desp.abierto .desp{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.desp a{display:flex;flex-direction:column;gap:3px;padding:13px 14px;border-radius:14px;text-decoration:none;transition:background .18s}
+.desp a:hover{background:var(--verde-50)}
+.desp b{font-size:.97rem;color:var(--tinta)}
+.desp span{font-size:.85rem;color:var(--gris);line-height:1.35}
+.hamburguesa{display:none;width:44px;height:44px;border:0;border-radius:14px;background:var(--crema-2);cursor:pointer;padding:0;place-items:center}
+.hamburguesa span,.hamburguesa span::before,.hamburguesa span::after{display:block;width:19px;height:2px;border-radius:2px;background:var(--tinta);transition:transform .25s var(--ease),opacity .2s}
+.hamburguesa span{position:relative}
+.hamburguesa span::before,.hamburguesa span::after{content:"";position:absolute;left:0}
+.hamburguesa span::before{top:-6px}
+.hamburguesa span::after{top:6px}
+.menu-abierto .hamburguesa span{background:transparent}
+.menu-abierto .hamburguesa span::before{transform:translateY(6px) rotate(45deg)}
+.menu-abierto .hamburguesa span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- portada de cada sección ---------- */
+.portada-seccion{position:relative;overflow:hidden;background:var(--crema);padding:clamp(46px,6vw,78px) 0 clamp(52px,6vw,86px)}
+.portada-seccion .contenedor{position:relative;z-index:1}
+.ruta-migas{display:flex;gap:8px;align-items:center;font-size:.86rem;color:var(--gris-2);margin-bottom:20px}
+.ruta-migas a{color:var(--gris);text-decoration:none}
+.ruta-migas a:hover{color:var(--verde)}
+.titulo-caja{display:inline;background:var(--verde);color:#fff;padding:.06em .2em;box-decoration-break:clone;-webkit-box-decoration-break:clone;border-radius:6px;line-height:1.3}
+.portada-seccion h1{max-width:22ch;margin-bottom:10px}
+.portada-seccion .bajada{max-width:60ch}
+.deco-ilus{position:absolute;inset:0;pointer-events:none;opacity:.55}
+.deco-ilus svg{position:absolute}
+.deco-ilus svg:nth-child(1){right:4%;top:8%;width:148px;transform:rotate(-8deg)}
+.deco-ilus svg:nth-child(2){right:17%;bottom:-8%;width:116px;transform:rotate(12deg)}
+.deco-ilus svg:nth-child(3){right:31%;top:16%;width:88px;transform:rotate(-14deg);opacity:.7}
+
+/* ---------- piezas repetidas ---------- */
+.grilla{display:grid;gap:22px}
+.grilla.tres{grid-template-columns:repeat(3,1fr)}
+.grilla.dos{grid-template-columns:repeat(2,1fr)}
+.tarjeta{background:#fff;border:1px solid var(--linea);border-radius:var(--r-l);padding:30px 28px;display:flex;flex-direction:column;gap:12px}
+.tarjeta.enlazada{text-decoration:none;transition:transform .22s var(--ease),box-shadow .22s var(--ease),border-color .22s}
+.tarjeta.enlazada:hover{transform:translateY(-4px);box-shadow:var(--sombra-2);border-color:transparent}
+.tarjeta p{color:var(--gris);font-size:.99rem}
+.tarjeta .flecha{margin-top:auto;padding-top:14px;color:var(--verde);font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:7px}
+.tarjeta .ilus{width:74px;height:74px;margin-bottom:2px}
+.franja{background:var(--verde);color:#fff;padding:clamp(34px,4vw,52px) 0}
+.franja .contenedor{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.franja b{display:block;font-family:var(--display);font-size:clamp(1.6rem,1.1rem + 1.6vw,2.2rem);letter-spacing:-.03em;margin-bottom:6px}
+.franja span{color:#CFE3C9;font-size:.98rem}
+.bloque{background:#fff;border:1px solid var(--linea);border-radius:var(--r-l);padding:clamp(26px,3vw,40px)}
+.bloque h3{margin-bottom:12px}
+.destacado-cita{font-family:var(--display);font-weight:600;font-size:clamp(1.3rem,1rem + 1.3vw,1.9rem);line-height:1.25;letter-spacing:-.025em;max-width:24ch}
+.lista-puntos{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.lista-puntos li{position:relative;padding-left:20px;color:var(--gris)}
+.lista-puntos li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--verde)}
+.lista-puntos b{color:var(--tinta);font-weight:600}
+.pieza{display:grid;grid-template-columns:1fr .85fr;gap:clamp(30px,4vw,64px);align-items:center;padding:clamp(34px,4vw,56px) 0;border-top:1px solid var(--linea)}
+.pieza:first-of-type{border-top:0}
+.pieza.invertida > :first-child{order:2}
+.eti-pieza{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--verde);margin-bottom:14px}
+.pieza h2{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.1rem);margin-bottom:6px}
+.pieza .captura-suelta img{width:min(268px,70vw)}
+
+/* ---------- tabla de comparables ---------- */
+.tabla-envoltura{overflow-x:auto;border:1px solid var(--linea);border-radius:var(--r-l);background:#fff}
+table.datos-tabla{border-collapse:collapse;width:100%;min-width:640px;font-size:.95rem}
+.datos-tabla th,.datos-tabla td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--linea);vertical-align:top}
+.datos-tabla thead th{background:var(--crema);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gris)}
+.datos-tabla tbody tr:last-child td{border-bottom:0}
+.datos-tabla td b{font-weight:600}
+.datos-tabla td span{color:var(--gris);font-size:.88rem;display:block}
+
+/* ---------- línea de tiempo ---------- */
+.tiempo{list-style:none;position:relative;padding-left:34px}
+.tiempo::before{content:"";position:absolute;left:9px;top:8px;bottom:8px;width:2px;background:var(--linea)}
+.tiempo li{position:relative;padding-bottom:34px}
+.tiempo li:last-child{padding-bottom:0}
+.tiempo li::before{content:"";position:absolute;left:-34px;top:5px;width:20px;height:20px;border-radius:50%;background:#fff;border:3px solid var(--verde-100)}
+.tiempo li.hito::before{background:var(--verde);border-color:var(--verde-100)}
+.tiempo .fecha{display:block;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--verde);margin-bottom:6px}
+.tiempo h3{margin-bottom:8px}
+.tiempo p{color:var(--gris);max-width:62ch}
+
+/* ---------- pie con columnas ---------- */
+.pie-grilla{grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:32px}
+.pie-col .pie-eti{margin-bottom:14px}
+.pie-col a{display:block;color:#9FAC9F;text-decoration:none;padding:5px 0}
+.pie-col a:hover{color:#fff}
+.pie-contacto{color:#9FAC9F;font-size:.9rem;line-height:1.6}
+.pie-contacto a{color:#A9CE9C;display:inline;padding:0}
+
+@media (max-width:1000px){
+  .franja .contenedor,.grilla.tres{grid-template-columns:1fr 1fr}
+  .pieza{grid-template-columns:1fr}
+  .pieza.invertida > :first-child{order:0}
+  .pie-grilla{grid-template-columns:1fr 1fr}
+  .deco-ilus{display:none}
+  .hamburguesa{display:grid}
+  .menu{
+    display:flex;position:absolute;left:12px;right:12px;top:calc(100% + 8px);flex-direction:column;align-items:stretch;gap:2px;
+    background:#fff;border:1px solid var(--linea);border-radius:22px;box-shadow:var(--sombra-2);padding:12px;
+    opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .22s var(--ease),transform .22s var(--ease),visibility .22s;
+  }
+  .menu-abierto .menu{opacity:1;visibility:visible;transform:none}
+  .menu > a,.menu-btn{width:100%;justify-content:space-between;padding:13px 14px;border-radius:14px;font-size:1rem}
+  .menu > a.pastilla{justify-content:center}
+  .menu-desp{position:static}
+  .desp{position:static;width:auto;transform:none;opacity:1;visibility:visible;box-shadow:none;border:0;padding:2px 0 8px 10px;display:none;grid-template-columns:1fr}
+  .menu-desp.abierto .desp{display:grid;transform:none}
+}
+@media (max-width:660px){
+  .grilla.tres,.grilla.dos,.franja .contenedor,.pie-grilla{grid-template-columns:1fr}
+  .portada-seccion h1{max-width:none}
+  .tiempo{padding-left:28px}
+  .tiempo li::before{left:-28px;width:16px;height:16px}
 }

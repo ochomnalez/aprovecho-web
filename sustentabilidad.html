@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sustentabilidad · Aprovecho</title>
+<meta name="description" content="Cómo medimos el impacto de cada pack, con qué método y con qué límites declarados.">
+<meta name="theme-color" content="#2F6B34">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aprovecho">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Sustentabilidad · Aprovecho">
+<meta property="og:description" content="Cómo medimos el impacto de cada pack, con qué método y con qué límites declarados.">
+<meta property="og:url" content="https://ochomnalez.github.io/aprovecho-web/sustentabilidad.html">
+<meta property="og:image" content="https://ochomnalez.github.io/aprovecho-web/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ochomnalez.github.io/aprovecho-web/sustentabilidad.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/web.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera-fila">
+    <a class="marca" href="index.html" aria-label="Aprovecho, inicio">
+      <img src="img/aprovecho-isotipo.svg" alt="" width="34" height="34">
+      <span>Aprovecho</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="acerca.html">Acerca de</a>
+      <div class="menu-desp" id="desp-eco">
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="lista-eco">Nuestro ecosistema <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="desp" id="lista-eco">
+          <a href="ecosistema.html#personas"><b>Para las personas</b><span>La app: mapa, reserva y retiro con QR</span></a>
+          <a href="ecosistema.html#locales"><b>Para los locales</b><span>Publicar el excedente con una foto</span></a>
+          <a href="ecosistema.html#estacion"><b>Estación de cocina</b><span>Balanza y cámara que miden la merma</span></a>
+          <a href="ecosistema.html#intelligence"><b>Intelligence</b><span>Sugerencias y comparación entre sucursales</span></a>
+          <a href="ecosistema.html#reportes"><b>Reportes de impacto</b><span>Excel y PDF con su metodología</span></a>
+          <a href="ecosistema.html#planes"><b>Planes</b><span>Básico, Smart e Intelligence</span></a>
+        </div>
+      </div>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="inversores.html">Inversores</a>
+      <a href="sustentabilidad.html" class="actual">Sustentabilidad</a>
+      <a href="novedades.html" class="pastilla">Novedades</a>
+    </nav>
+    <a class="btn btn-verde btn-chico" href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Probar la demo</a>
+    <button class="hamburguesa" id="hamburguesa" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir el menú"><span></span></button>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="portada-seccion">
+    <div class="deco-ilus" aria-hidden="true"><span data-ilus="hoja" data-tam="150"></span><span data-ilus="vianda" data-tam="150"></span><span data-ilus="medialuna" data-tam="150"></span></div>
+    <div class="contenedor">
+      <p class="ruta-migas"><a href="index.html">Inicio</a> <span aria-hidden="true">›</span> Sustentabilidad</p>
+      <h1>Medir el desperdicio para <span class="titulo-caja">que sea más chico</span>.</h1>
+      <p class="bajada">El impacto no es un cartel al final del año: es un dato por pack, con su método explicado y sus límites declarados.</p>
+    </div>
+  </section>
+  <section class="seccion">
+    <div class="contenedor dos-columnas">
+      <div>
+        <p class="ojo">El problema</p>
+        <h2>Comida que se produjo para comerse.</h2>
+        <p class="parrafo">El desperdicio de alimentos no es solo comida: es el agua, la energía y el trabajo que se usaron para producirla, más el metano que genera cuando termina en un relleno sanitario. Y la porción que ocurre en el mostrador, al cierre, es la más evitable de todas: está lista, está en buen estado y tiene fecha de vencimiento de horas.</p>
+      </div>
+      <ul class="datos">
+        <li>
+          <b>1 de cada 3</b>
+          <span>alimentos producidos para consumo humano se pierde o se desperdicia en el mundo.<a class="nota-ref" href="#fuentes"><sup>1</sup></a></span>
+        </li>
+        <li>
+          <b>1.050 M</b>
+          <span>de toneladas de comida se desperdiciaron en 2022: el 19 % de la que llega al consumidor.<a class="nota-ref" href="#fuentes"><sup>2</sup></a></span>
+        </li>
+        <li>
+          <b>28 %</b>
+          <span>de ese desperdicio sale de bares, restaurantes y comedores, no de las casas.<a class="nota-ref" href="#fuentes"><sup>2</sup></a></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="franja">
+    <div class="contenedor">
+      <div><b>Económico</b><span>El local recupera parte de lo que hoy tira y el vecino accede a comida de calidad a mitad de precio.</span></div>
+      <div><b>Social</b><span>Comida en buen estado que se vende barata en el barrio, sin intermediarios ni logística.</span></div>
+      <div><b>Ambiental</b><span>Cada kilo que no va al tacho evita las emisiones asociadas a producirlo y a enterrarlo.</span></div>
+    </div>
+  </section>
+
+  <section class="seccion">
+    <div class="contenedor dos-columnas alineado invertido">
+      <div class="captura-suelta">
+        <img loading="lazy" src="img/app/impacto.webp" alt="Pantalla de impacto: kilos rescatados, CO2 evitado y porcentaje vendido" width="585" height="1266">
+      </div>
+      <div>
+        <p class="ojo">Cómo medimos</p>
+        <h2>Un número por pack, no una estimación de fin de año.</h2>
+        <p class="parrafo">Cada pack que se publica y se retira deja tres datos: los kilos que no se tiraron, la plata que el local recuperó y el CO₂ equivalente evitado. La app los muestra por semana, por mes y desde el alta, y se descargan en Excel y PDF.</p>
+        <ul class="lista-puntos">
+          <li><b>Precisión declarada:</b> cada dato dice si fue estimado a partir de una foto o pesado con balanza. No es lo mismo y no lo mezclamos.</li>
+          <li><b>Merma aparte:</b> lo que igual terminó en la basura se registra con su motivo. Es la mitad incómoda del reporte y también sale en el PDF.</li>
+          <li><b>Hoja de metodología:</b> cada descarga explica qué se contó, qué factor se usó y qué queda afuera.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion crema">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="ojo">Honestidad del dato</p>
+        <h2>Lo que todavía no podemos afirmar.</h2>
+      </div>
+      <div class="grilla dos">
+        <article class="bloque">
+          <h3>El factor de CO₂ es provisorio</h3>
+          <p class="parrafo" style="margin-top:0">La demo convierte kilos rescatados en CO₂ equivalente con un factor de referencia que todavía no tiene fuente elegida. Está marcado como tal dentro de la app y en los reportes. Antes de usarlo en cualquier comunicación seria hay que fijarlo con una fuente citable.</p>
+        </article>
+        <article class="bloque">
+          <h3>No compensamos nada</h3>
+          <p class="parrafo" style="margin-top:0">Aprovecho no vende bonos de carbono ni certifica huella. Lo que mide es la comida que no se tiró y lo que eso implica, con su metodología a la vista. Nada más, y ya es bastante.</p>
+        </article>
+        <article class="bloque">
+          <h3>El objetivo es vender menos</h3>
+          <p class="parrafo" style="margin-top:0">Si las sugerencias funcionan, cada local va a producir mejor y le va a sobrar menos. Vamos a tener menos packs para vender y eso está bien: significa que el desperdicio bajó en el origen, que es donde importa.</p>
+        </article>
+        <article class="bloque">
+          <h3>Lo que sobra no reemplaza la asistencia</h3>
+          <p class="parrafo" style="margin-top:0">Esto es un canal comercial, no un programa de donación. Los packs se venden, con su precio y su comprobante. Confundir las dos cosas le hace mal al proyecto y a la gente que sí necesita asistencia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="fuentes">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="ojo">Fuentes</p>
+        <h2>De dónde salen los datos de esta página.</h2>
+      </div>
+      <div class="bloque">
+        <ol class="lista-puntos" style="margin-top:0">
+          <li><b>1.</b> FAO, <cite>Global Food Losses and Food Waste</cite> (2011) — sobre el tercio de los alimentos producidos que se pierde o desperdicia. <a href="https://www.fao.org/platform-food-loss-waste/en" target="_blank" rel="noopener">fao.org</a></li>
+          <li><b>2.</b> PNUMA, <cite>Food Waste Index Report 2024</cite> — toneladas desperdiciadas en 2022, porcentaje sobre lo disponible al consumidor y participación del sector gastronómico. <a href="https://www.unep.org/resources/publication/food-waste-index-report-2024" target="_blank" rel="noopener">unep.org</a></li>
+        </ol>
+        <p class="pie-nota">Los datos de competidores que aparecen en <a href="inversores.html">Inversores</a> provienen de informes anuales publicados en registros mercantiles y de notas de prensa del sector (2025–2026), y se citan como referencia de mercado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <div class="contenedor cierre-grilla">
+      <div>
+        <h2>Mirá el reporte en la app</h2>
+        <p class="parrafo">En el modo local, la sección Impacto arma el informe y lo descarga en Excel o PDF, con la hoja de metodología incluida. Es la mejor forma de ver qué medimos y cómo.</p>
+        <a class="btn btn-blanco" href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Abrir la demo</a>
+      </div>
+      <div class="cierre-app">
+        <p class="cierre-eti">¿Trabajás en sustentabilidad?</p>
+        <p class="parrafo chico">Si podés ayudarnos a fijar el factor de CO₂ con una fuente sólida, escribinos.</p>
+        <a class="btn btn-blanco" href="mailto:hola@aprovecho.com.ar?subject=Sustentabilidad%20Aprovecho">Escribirnos</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie-grilla">
+    <div class="pie-col">
+      <img class="pie-logo" src="img/aprovecho-isotipo-blanco.svg" alt="Aprovecho" width="44" height="44">
+      <p class="pie-lema">Nada se pierde, todo vale.</p>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Aprovecho</p>
+      <a href="acerca.html">Acerca de</a>
+      <a href="ecosistema.html">Nuestro ecosistema</a>
+      <a href="tecnologia.html">Tecnología</a>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Más</p>
+      <a href="inversores.html">Inversores</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="novedades.html">Novedades</a>
+      <a href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Probar la demo</a>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Contacto</p>
+      <p class="pie-contacto">
+        Si tenés un local en Zona Norte del GBA y querés estar en el piloto:<br>
+        <a href="mailto:hola@aprovecho.com.ar?subject=Quiero%20sumar%20mi%20local%20a%20Aprovecho">hola@aprovecho.com.ar</a>
+      </p>
+      <p class="pie-contacto" style="margin-top:12px"><a href="sustentabilidad.html#fuentes">Fuentes de los datos</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-legal">
+    <p>Aprovecho es un proyecto académico en desarrollo (Universidad Austral, Emprendimientos 2026). La app publicada es una demo con datos simulados: los locales, los packs y los pagos son ficticios.</p>
+  </div>
+</footer>
+
+<script type="module" src="js/web.js"></script>
+</body>
+</html>

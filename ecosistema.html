@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuestro ecosistema · Aprovecho</title>
+<meta name="description" content="La app para las personas, la plataforma para los locales, la estación de cocina, Intelligence y los reportes de impacto.">
+<meta name="theme-color" content="#2F6B34">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Aprovecho">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Nuestro ecosistema · Aprovecho">
+<meta property="og:description" content="La app para las personas, la plataforma para los locales, la estación de cocina, Intelligence y los reportes de impacto.">
+<meta property="og:url" content="https://ochomnalez.github.io/aprovecho-web/ecosistema.html">
+<meta property="og:image" content="https://ochomnalez.github.io/aprovecho-web/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ochomnalez.github.io/aprovecho-web/ecosistema.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/web.css">
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera-fila">
+    <a class="marca" href="index.html" aria-label="Aprovecho, inicio">
+      <img src="img/aprovecho-isotipo.svg" alt="" width="34" height="34">
+      <span>Aprovecho</span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="acerca.html">Acerca de</a>
+      <div class="menu-desp" id="desp-eco">
+        <button class="menu-btn actual" type="button" aria-expanded="false" aria-controls="lista-eco">Nuestro ecosistema <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="desp" id="lista-eco">
+          <a href="ecosistema.html#personas"><b>Para las personas</b><span>La app: mapa, reserva y retiro con QR</span></a>
+          <a href="ecosistema.html#locales"><b>Para los locales</b><span>Publicar el excedente con una foto</span></a>
+          <a href="ecosistema.html#estacion"><b>Estación de cocina</b><span>Balanza y cámara que miden la merma</span></a>
+          <a href="ecosistema.html#intelligence"><b>Intelligence</b><span>Sugerencias y comparación entre sucursales</span></a>
+          <a href="ecosistema.html#reportes"><b>Reportes de impacto</b><span>Excel y PDF con su metodología</span></a>
+          <a href="ecosistema.html#planes"><b>Planes</b><span>Básico, Smart e Intelligence</span></a>
+        </div>
+      </div>
+      <a href="tecnologia.html">Tecnología</a>
+      <a href="inversores.html">Inversores</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="novedades.html" class="pastilla">Novedades</a>
+    </nav>
+    <a class="btn btn-verde btn-chico" href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Probar la demo</a>
+    <button class="hamburguesa" id="hamburguesa" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir el menú"><span></span></button>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="portada-seccion">
+    <div class="deco-ilus" aria-hidden="true"><span data-ilus="caja" data-tam="150"></span><span data-ilus="pan" data-tam="150"></span><span data-ilus="cafe" data-tam="150"></span></div>
+    <div class="contenedor">
+      <p class="ruta-migas"><a href="index.html">Inicio</a> <span aria-hidden="true">›</span> Nuestro ecosistema</p>
+      <h1>Una app, una plataforma y <span class="titulo-caja">una capa de datos</span>.</h1>
+      <p class="bajada">Las tres piezas trabajan sobre el mismo excedente: una lo vende, otra lo publica sin fricción y la tercera explica por qué se generó.</p>
+    </div>
+  </section>
+  <section class="seccion">
+    <div class="contenedor">
+
+      <article class="pieza" id="personas">
+        <div>
+          <p class="eti-pieza">Para las personas</p>
+          <h2>La app: mapa, reserva y retiro.</h2>
+          <p class="parrafo">Mostramos los locales que hoy tienen packs, ordenados por distancia, con la franja horaria de retiro y cuánto queda. Cada pack es sorpresa, pero no a ciegas: dice la categoría, el tamaño, el peso aproximado y el precio de lista.</p>
+          <ul class="lista-puntos">
+            <li><b>Condiciones alimentarias:</b> sin TACC, vegetariano y vegano se habilitan solo si el local tiene excedente que cumple ese día.</li>
+            <li><b>Pago por adelantado</b> en la app, retiro presencial con código QR de cuatro letras.</li>
+            <li><b>Estimación nutricional</b> del pack, en rangos, calculada a partir del peso.</li>
+            <li>Se instala en el celular y sigue funcionando sin internet.</li>
+          </ul>
+        </div>
+        <div class="captura-suelta">
+          <img loading="lazy" src="img/app/pack.webp" alt="Detalle de un pack sorpresa con precio, peso y nutrición estimada" width="585" height="1266">
+        </div>
+      </article>
+
+      <article class="pieza invertida" id="locales">
+        <div>
+          <p class="eti-pieza">Para los locales · plan Básico</p>
+          <h2>Publicar con una foto.</h2>
+          <p class="parrafo">El empleado que cierra la caja no va a completar un formulario por cada cosa que sobró. Saca una foto de lo que quedó sobre el mostrador y la app reconoce el producto, estima la cantidad y propone los packs, con precio y horario.</p>
+          <ul class="lista-puntos">
+            <li><b>Reglas del día:</b> se publica hasta dos horas antes del cierre y la cantidad se puede ajustar hasta una hora antes.</li>
+            <li><b>Sin abono:</b> se cobra una comisión sobre lo que efectivamente se vende.</li>
+            <li><b>Sin integración:</b> no hace falta conectar el sistema de ventas ni cargar la carta.</li>
+            <li>Lo que no se retiró queda registrado al cierre, con su motivo.</li>
+          </ul>
+        </div>
+        <div class="captura-suelta">
+          <img loading="lazy" src="img/app/camara.webp" alt="Pantalla para sacarle la foto al excedente" width="585" height="1266">
+        </div>
+      </article>
+
+      <article class="pieza" id="estacion">
+        <div>
+          <p class="eti-pieza">Plan Smart</p>
+          <h2>La estación de cocina.</h2>
+          <p class="parrafo">Para cocinas de volumen, una estación con balanza y cámara reemplaza a la foto: se apoya lo que sobra, se pesa y se reconoce solo. La diferencia no es la comodidad, es la precisión del dato: deja de ser una estimación y pasa a ser un peso.</p>
+          <ul class="lista-puntos">
+            <li>Separa lo que se puede vender de lo que va a la basura, y pide el motivo de la merma.</li>
+            <li>Publica el pack al instante, con opción de deshacer.</li>
+            <li>El dato queda marcado como <b>pesado con balanza</b> en todos los reportes.</li>
+          </ul>
+        </div>
+        <div class="captura-suelta">
+          <img loading="lazy" src="img/app/estacion.webp" alt="Pantalla de la estación de cocina con la balanza" width="585" height="1266">
+        </div>
+      </article>
+
+      <article class="pieza invertida" id="intelligence">
+        <div>
+          <p class="eti-pieza">Plan Intelligence</p>
+          <h2>Entender por qué sobra.</h2>
+          <p class="parrafo">Con el histórico de cada local aparecen los patrones: qué día sobra siempre lo mismo, qué producto no se vende a las 20, qué sucursal desperdicia el doble que la de al lado. Intelligence los convierte en sugerencias concretas, cada una con la evidencia que la respalda y el ahorro estimado.</p>
+          <ul class="lista-puntos">
+            <li>Comparación entre sucursales y contra el promedio de la red.</li>
+            <li>Sugerencias que se pueden aplicar, probar o descartar, con seguimiento.</li>
+            <li>Cortes por horario, tipo de pack, zona y momento del mes.</li>
+          </ul>
+        </div>
+        <div class="captura-suelta">
+          <img loading="lazy" src="img/app/intel.webp" alt="Panel de Intelligence con el porcentaje de desperdicio y las sugerencias" width="585" height="1266">
+        </div>
+      </article>
+
+      <article class="pieza" id="reportes">
+        <div>
+          <p class="eti-pieza">Reportes</p>
+          <h2>Impacto que se puede auditar.</h2>
+          <p class="parrafo">Kilos rescatados, plata recuperada, porcentaje de packs vendidos y CO₂ equivalente evitado, por semana, por mes o desde el alta. Se descarga en Excel y en PDF, con una hoja de metodología que dice de dónde sale cada número y qué factor se usó.</p>
+          <ul class="lista-puntos">
+            <li>Cada indicador aclara si el dato fue estimado por foto o pesado con balanza.</li>
+            <li>El factor de CO₂ que usa la demo todavía no tiene fuente elegida y está marcado como tal.</li>
+          </ul>
+        </div>
+        <div class="captura-suelta">
+          <img loading="lazy" src="img/app/impacto.webp" alt="Pantalla de impacto con kilos rescatados y CO2 evitado" width="585" height="1266">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="seccion crema" id="planes">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <p class="ojo">Planes</p>
+        <h2>Primero recuperás. Después medís. Al final, producís menos.</h2>
+        <p class="bajada centrada">Los tres planes venden el mismo excedente. Lo que cambia es la calidad del dato que queda atrás y qué se puede hacer con él.</p>
+      </div>
+
+      <div class="planes">
+        <article class="plan">
+          <h3>Básico</h3>
+          <p class="plan-frase">“Mostranos lo que te sobró. Aprovecho hace el resto.”</p>
+          <p class="plan-precio"><b>Sin abono</b><span>solo comisión por pack vendido</span></p>
+          <dl class="plan-detalle">
+            <dt>Captura</dt><dd>Foto con el celular del local</dd>
+            <dt>Dato</dt><dd>Estimado por imagen</dd>
+            <dt>Sirve para</dt><dd>Panaderías, cafés y restaurantes de barrio</dd>
+          </dl>
+        </article>
+
+        <article class="plan destacado">
+          <span class="plan-cinta">El que más se usa en la demo</span>
+          <h3>Smart</h3>
+          <p class="plan-frase">“Medí con precisión lo que desperdiciás y recuperá más.”</p>
+          <p class="plan-precio"><b>USD 450/mes</b><span>+ comisión · incluye la estación</span></p>
+          <dl class="plan-detalle">
+            <dt>Captura</dt><dd>Estación con balanza y cámara en la cocina</dd>
+            <dt>Dato</dt><dd>Peso real, continuo, con el motivo de la merma</dd>
+            <dt>Sirve para</dt><dd>Cocinas de volumen: hoteles, catering, cadenas chicas</dd>
+          </dl>
+        </article>
+
+        <article class="plan">
+          <h3>Intelligence</h3>
+          <p class="plan-frase">“Entendé por qué desperdiciás y empezá a desperdiciar menos.”</p>
+          <p class="plan-precio"><b>USD 900/mes</b><span>por sucursal + comisión</span></p>
+          <dl class="plan-detalle">
+            <dt>Captura</dt><dd>Todo lo de Smart, con histórico</dd>
+            <dt>Dato</dt><dd>Comparación entre sucursales y sugerencias con evidencia</dd>
+            <dt>Sirve para</dt><dd>Cadenas y supermercados con varias bocas</dd>
+          </dl>
+        </article>
+      </div>
+      <p class="pie-nota centrada">Precios de referencia para la demo. La estructura definitiva se está recalculando con costos reales: comisión de pasarela, costo de la IA por foto, soporte, hardware y captación de comercios. El detalle está en <a href="inversores.html">Inversores</a>.</p>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <div class="contenedor cierre-grilla">
+      <div>
+        <h2>Probalo antes de creernos</h2>
+        <p class="parrafo">La demo tiene los tres planes activos y se puede cambiar de uno a otro desde el selector de arriba a la derecha. También se puede pasar del modo cliente al modo local.</p>
+        <a class="btn btn-blanco" href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Abrir la demo</a>
+      </div>
+      <div class="cierre-app">
+        <p class="cierre-eti">¿Tenés un local?</p>
+        <p class="parrafo chico">Estamos armando el piloto en Zona Norte del GBA.</p>
+        <a class="btn btn-blanco" href="mailto:hola@aprovecho.com.ar?subject=Quiero%20sumar%20mi%20local%20a%20Aprovecho">Escribirnos</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor pie-grilla">
+    <div class="pie-col">
+      <img class="pie-logo" src="img/aprovecho-isotipo-blanco.svg" alt="Aprovecho" width="44" height="44">
+      <p class="pie-lema">Nada se pierde, todo vale.</p>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Aprovecho</p>
+      <a href="acerca.html">Acerca de</a>
+      <a href="ecosistema.html">Nuestro ecosistema</a>
+      <a href="tecnologia.html">Tecnología</a>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Más</p>
+      <a href="inversores.html">Inversores</a>
+      <a href="sustentabilidad.html">Sustentabilidad</a>
+      <a href="novedades.html">Novedades</a>
+      <a href="https://ochomnalez.github.io/aprovecho-app/" target="_blank" rel="noopener">Probar la demo</a>
+    </div>
+    <div class="pie-col">
+      <p class="pie-eti">Contacto</p>
+      <p class="pie-contacto">
+        Si tenés un local en Zona Norte del GBA y querés estar en el piloto:<br>
+        <a href="mailto:hola@aprovecho.com.ar?subject=Quiero%20sumar%20mi%20local%20a%20Aprovecho">hola@aprovecho.com.ar</a>
+      </p>
+      <p class="pie-contacto" style="margin-top:12px"><a href="sustentabilidad.html#fuentes">Fuentes de los datos</a></p>
+    </div>
+  </div>
+  <div class="contenedor pie-legal">
+    <p>Aprovecho es un proyecto académico en desarrollo (Universidad Austral, Emprendimientos 2026). La app publicada es una demo con datos simulados: los locales, los packs y los pagos son ficticios.</p>
+  </div>
+</footer>
+
+<script type="module" src="js/web.js"></script>
+</body>
+</html>

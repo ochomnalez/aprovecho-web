@@ -1,5 +1,11 @@
-// Sitio de Aprovecho: cambio de lado en "Cómo funciona", demo embebida y
-// aparición de los bloques al bajar. Sin librerías.
+// Sitio de Aprovecho: navegación, ilustraciones, demo embebida y aparición de
+// los bloques al bajar. Sin librerías; se carga como módulo.
+import { ilus } from './ilus.js';
+
+// ---------- ilustraciones de la app, dibujadas en el sitio ----------
+document.querySelectorAll('[data-ilus]').forEach(el => {
+  el.innerHTML = ilus(el.dataset.ilus, +el.dataset.tam || 72);
+});
 
 // ---------- la cabecera se despega al bajar ----------
 const cabecera = document.getElementById('cabecera');
@@ -7,11 +13,44 @@ const mirarScroll = () => cabecera.classList.toggle('pegada', window.scrollY > 8
 mirarScroll();
 addEventListener('scroll', mirarScroll, { passive: true });
 
-// ---------- comprar / vender ----------
+// ---------- menú ----------
+const hamburguesa = document.getElementById('hamburguesa');
+const desp = document.getElementById('desp-eco');
+const despBtn = desp?.querySelector('.menu-btn');
+const enChico = () => matchMedia('(max-width:1000px)').matches;
+
+function abrirMenu(abierto) {
+  document.body.classList.toggle('menu-abierto', abierto);
+  hamburguesa.setAttribute('aria-expanded', String(abierto));
+  hamburguesa.setAttribute('aria-label', abierto ? 'Cerrar el menú' : 'Abrir el menú');
+  if (!abierto) abrirDesp(false);
+}
+function abrirDesp(abierto) {
+  desp?.classList.toggle('abierto', abierto);
+  despBtn?.setAttribute('aria-expanded', String(abierto));
+}
+
+hamburguesa?.addEventListener('click', () => abrirMenu(!document.body.classList.contains('menu-abierto')));
+despBtn?.addEventListener('click', () => abrirDesp(!desp.classList.contains('abierto')));
+// en pantalla grande el desplegable también responde al mouse
+desp?.addEventListener('mouseenter', () => { if (!enChico()) abrirDesp(true); });
+desp?.addEventListener('mouseleave', () => { if (!enChico()) abrirDesp(false); });
+document.addEventListener('click', e => {
+  if (desp && !desp.contains(e.target) && !enChico()) abrirDesp(false);
+  if (enChico() && document.body.classList.contains('menu-abierto') && !e.target.closest('.cabecera')) abrirMenu(false);
+});
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  abrirDesp(false);
+  if (document.body.classList.contains('menu-abierto')) { abrirMenu(false); hamburguesa.focus(); }
+});
+addEventListener('resize', () => { if (!enChico()) abrirMenu(false); });
+
+// ---------- comprar / vender (solo en la portada) ----------
 const tabs = [
   { btn: document.getElementById('tab-persona'), panel: document.getElementById('panel-persona') },
   { btn: document.getElementById('tab-local'), panel: document.getElementById('panel-local') },
-];
+].filter(t => t.btn && t.panel);
 tabs.forEach(({ btn }, i) => {
   btn.addEventListener('click', () => {
     tabs.forEach(({ btn: b, panel: p }, j) => {
@@ -25,7 +64,6 @@ tabs.forEach(({ btn }, i) => {
     });
   });
 });
-// flechas del teclado, como espera un grupo de pestañas
 document.querySelector('.selector')?.addEventListener('keydown', e => {
   const i = tabs.findIndex(t => t.btn === document.activeElement);
   if (i < 0) return;
@@ -46,7 +84,6 @@ boton?.addEventListener('click', () => {
   marco.src = APP;
   marco.title = 'Demo de la app Aprovecho';
   marco.allow = 'geolocation; clipboard-write';
-  marco.loading = 'eager';
   pantalla.replaceChildren(marco);
   pantalla.classList.add('jugando');
   const nota = document.getElementById('telefono-nota');
@@ -55,8 +92,9 @@ boton?.addEventListener('click', () => {
 
 // ---------- aparición al bajar ----------
 const aparecen = [
-  '.portada-texto', '.portada-demo', '.dos-columnas > *', '.encabezado-seccion',
-  '.selector', '.paso', '.plan', '.estado-col', '.ruta', '.equipo li', '.cierre-grilla > *',
+  '.portada-texto', '.portada-demo', '.portada-seccion .contenedor > *', '.dos-columnas > *',
+  '.encabezado-seccion', '.selector', '.paso', '.plan', '.estado-col', '.ruta', '.equipo li',
+  '.cierre-grilla > *', '.tarjeta', '.pieza > *', '.franja .contenedor > *', '.tiempo li', '.tabla-envoltura', '.bloque',
 ];
 const nodos = document.querySelectorAll(aparecen.join(','));
 if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
@@ -66,7 +104,7 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObs
     n.setAttribute('data-ap', '');
     n.style.transitionDelay = (i % 4) * 70 + 'ms';
   });
-  const ojo = new IntersectionObserver((entradas) => {
+  const ojo = new IntersectionObserver(entradas => {
     for (const e of entradas) {
       if (!e.isIntersecting) continue;
       e.target.classList.add('visible');
@@ -74,7 +112,6 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObs
     }
   }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
   nodos.forEach(n => ojo.observe(n));
-  // lo que ya está en pantalla al cargar no espera
   addEventListener('load', () => {
     nodos.forEach(n => { if (n.getBoundingClientRect().top < innerHeight) n.classList.add('visible'); });
   });
