@@ -20,6 +20,8 @@ tabs.forEach(({ btn }, i) => {
       b.setAttribute('aria-selected', String(activo));
       p.classList.toggle('oculto', !activo);
       p.hidden = !activo;
+      // el panel escondido no baja sus fotos; al mostrarlo, que empiecen ya
+      if (activo) p.querySelectorAll('img[loading="lazy"]').forEach(img => { img.loading = 'eager'; });
     });
   });
 });
